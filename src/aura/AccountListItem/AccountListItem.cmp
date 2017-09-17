@@ -1,0 +1,17 @@
+<aura:component controller="AccountController">
+    <!--
+    Todo: put space in between icon and account Name
+    -->
+        <aura:iteration items="{!v.accounts}" var="account">
+          <a class="card" onclick="{!c.accountSelected}">
+          <div class="card-heading">
+            <ui:outputText value="{!v.account.Name}" />
+            <c:svgIcon svgPath="/resource/slds100/assets/icons/standard-sprite/svg/symbols.svg#account"
+                        category="standard" size="medium" name="account" />
+            </div>
+            <ul class="card-detail">
+              <li><ui:outputText value="{!account.description}" /> </li>
+            </ul>
+        </a>
+      </aura:iteration>
+</aura:component>
